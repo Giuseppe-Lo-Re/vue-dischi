@@ -46,7 +46,7 @@ export default {
 
 
 .product-card-container {
-    
+    width: calc((100% / 5)); 
     padding: 10px;
 
     .product-card {
