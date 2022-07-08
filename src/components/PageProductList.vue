@@ -6,7 +6,6 @@
             :key="index"
             :productDetails="album" />
     </div>
-
   </div>
 </template>
 
@@ -48,6 +47,8 @@ data() {
 
 .products-list {
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
+    gap: $main_card_gap;
+    margin-top: 50px;
 }
 </style>

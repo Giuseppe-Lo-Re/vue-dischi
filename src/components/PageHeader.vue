@@ -11,7 +11,6 @@
 <script>
 export default {
     name: "PageHeader"
-
 }
 </script>
 
@@ -32,5 +31,4 @@ header {
     }
   }
 }
-
 </style>

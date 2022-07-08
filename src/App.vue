@@ -26,9 +26,4 @@ export default {
 <style lang="scss">
 @import './style/common';
 @import './style/variables';
-
-main {
-  background-color: $main_color;
-}
-
 </style>

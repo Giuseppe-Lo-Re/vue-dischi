@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="product-card-container">
         <div class="product-card">
 
@@ -22,21 +21,16 @@
             <div class="year">
                 {{productDetails.year}}
             </div>
-            
         </div>
-
     </div>
-  </div>
 </template>
 
 <script> 
-
 export default {
     name: "PageProductCard",
     props: {
         productDetails: Object
     }
-    
 }
 </script>
 
@@ -44,14 +38,14 @@ export default {
 @import '../style/common';
 @import '../style/variables';
 
-
 .product-card-container {
-    width: calc((100% / 5)); 
+    width: calc((100% / 5) - $main_card_gap);
     padding: 10px;
-
-    .product-card {
+    
+    .product-card { 
         background-color: $secondary_color;
         padding: 20px;
+        min-height: 300px;
     }
 
     .title,
@@ -62,22 +56,22 @@ export default {
 
     .title {
         color: white;
-        padding-block: 10px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
     }
 
     .author,
     .year {
         color: $tertiary_color;
+        font-size: 12px;
     }
 
     .img-wrapper {
         
         img {
-            width: 100%;
-            object-fit: cover; 
+            height: 130px;
         }
     }
 }
-
-
 </style>
