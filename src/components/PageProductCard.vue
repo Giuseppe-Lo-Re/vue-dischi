@@ -46,10 +46,16 @@ export default {
 
 
 .product-card-container {
-    width: calc((100% / 5));
+    
+    padding: 10px;
+
+    .product-card {
+        background-color: $secondary_color;
+        padding: 20px;
+    }
 
     .title,
-    .artist,
+    .author,
     .year {
         text-align: center;
     }
@@ -59,14 +65,17 @@ export default {
         padding-block: 10px;
     }
 
-    .artist,
+    .author,
     .year {
         color: $tertiary_color;
     }
 
     .img-wrapper {
-        // TEST
-        width: 200px;
+        
+        img {
+            width: 100%;
+            object-fit: cover; 
+        }
     }
 }
 

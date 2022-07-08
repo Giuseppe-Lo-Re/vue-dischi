@@ -47,8 +47,6 @@ data() {
 @import '../style/variables';
 
 .products-list {
-    display: flex;
-    flex-wrap: wrap;
+    width: calc((100% / 5));   
 }
-
 </style>
