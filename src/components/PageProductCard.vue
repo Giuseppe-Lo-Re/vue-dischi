@@ -30,15 +30,37 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     name: "PageProductCard",
-
+    data() {
+        return {
+            url:"https://flynn.boolean.careers/exercises/api/array/music",
+            albumlist: []
+        }
+    },
+    created() {
+        this.getAlbums();
+    },
+    methods: {
+        getAlbums() {
+            axios.get(this.url)
+            .then((response) => {
+                this.albumList = response.data.response;
+            }) 
+            .catch((err) => {
+                 console.log("error", err);
+            });
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../style/common';
 @import '../style/variables';
+
 
 .product-card-container {
     width: calc((100% / 5));

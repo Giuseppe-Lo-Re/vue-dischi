@@ -12,7 +12,7 @@ import PageProductCard from "./PageProductCard.vue";
 
 export default {
 name: "PageProductList",
-components: {
+components: { 
     PageProductCard
 }
 }
