@@ -27,8 +27,9 @@ header {
     padding: 15px;
 
     img {
-        width: 40px;
-        }
+      width: 40px;
+      cursor: pointer;
+    }
   }
 }
 
