@@ -5,22 +5,22 @@
 
             <!-- Image -->
             <div class="img-wrapper">
-                <img src="../assets/img/bad.jpeg" alt="">
+                <img :src="productDetails.poster" :alt="productDetails.title">
             </div>
 
             <!-- Title -->
             <h3 class="title">
-                BAD
+                {{productDetails.title}}
             </h3>
 
-            <!-- Artist -->
-            <div class="artist">
-                Michael Jackson
+            <!-- Author -->
+            <div class="author">
+                {{productDetails.author}}
             </div>
 
             <!-- Year -->
             <div class="year">
-                1987
+                {{productDetails.year}}
             </div>
             
         </div>
@@ -29,31 +29,14 @@
   </div>
 </template>
 
-<script>
-import axios from "axios";
+<script> 
 
 export default {
     name: "PageProductCard",
-    data() {
-        return {
-            url:"https://flynn.boolean.careers/exercises/api/array/music",
-            albumlist: []
-        }
-    },
-    created() {
-        this.getAlbums();
-    },
-    methods: {
-        getAlbums() {
-            axios.get(this.url)
-            .then((response) => {
-                this.albumList = response.data.response;
-            }) 
-            .catch((err) => {
-                 console.log("error", err);
-            });
-        }
+    props: {
+        productDetails: Object
     }
+    
 }
 </script>
 
