@@ -45,7 +45,7 @@ export default {
     .product-card { 
         background-color: $secondary_color;
         padding: 20px;
-        min-height: 300px;
+        min-height: 320px;
     }
 
     .title,
@@ -59,6 +59,7 @@ export default {
         padding-top: 20px;
         padding-bottom: 10px;
         text-transform: uppercase;
+        min-height: 100px;
     }
 
     .author,
@@ -70,7 +71,8 @@ export default {
     .img-wrapper {
         
         img {
-            height: 130px;
+            width: 150px;
+            height: 150px;
         }
     }
 }
