@@ -3,13 +3,13 @@
 
     <!-- Select Menù-->
     <div class="select">
-        <PageSelect @selectedGenre="changeSelect" />
+        <PageSelect @selectedGenre="changeSelect()" />
     </div>
      
     <!-- Album List -->
     <div class="products-list">
         <PageProductCard 
-            v-for="(album,index) in filteredProductList" 
+            v-for="(album,index) in filteredProductList()" 
             :key="index"
             :productDetails="album" />
     </div>
@@ -34,21 +34,24 @@ data() {
             selectedGenre : '',
         }
     },
+    // Lancia la funzione prima del caricamento del DOM
     created() {
         this.getAlbums();
     },
     computed: {
+        // Filtra l'array degli album secondo la selezione dell'utente
         filteredProductList() {
             if (this.selectedGenre === 'all') {
                 return this.albumList
             } else {
                 return this.albumList.filter((item) => {
                     return item.genre.includes(this.selectedGenre)
-                })
+                });
             }
         }
     },
     methods: {
+        // Scarica l'array degli album attraverso una chiamata API
         getAlbums() {
             axios.get(this.url)
             .then((response) => {
@@ -58,6 +61,7 @@ data() {
                  console.log("error", err);
             });
         },
+        // Definisce la selezione dell'utente
         changeSelect(selection) {
             this.selectedGenre = selection;
         }
