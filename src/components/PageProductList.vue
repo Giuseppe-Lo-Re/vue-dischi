@@ -76,6 +76,5 @@ data() {
     display: flex;
     flex-wrap: wrap;
     gap: $main_card_gap;
-    margin-top: 50px;
 }
 </style>

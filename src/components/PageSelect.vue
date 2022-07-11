@@ -3,7 +3,7 @@
 
     <!-- Label -->
     <label for="genre">
-        Seleziona un genere preferito:
+        Seleziona un genere:
     </label>
 
     <!-- Select -->
@@ -49,5 +49,4 @@ export default {
     label {
         color: #17d860;
     }
-    
 </style>
