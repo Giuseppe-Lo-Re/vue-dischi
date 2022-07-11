@@ -36,6 +36,8 @@ data() {
         filteredProductList() {
             if (this.selectedGenre === 'all') {
                 return this.albumList
+            } else {
+                return this.selectedGenre
             }
 
             return this.albumList.filter((item) => {
