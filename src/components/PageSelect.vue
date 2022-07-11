@@ -1,6 +1,12 @@
 <template>
-  <div class="select">
+  <div>
 
+    <!-- Label -->
+    <label for="genre">
+        Seleziona un genere preferito:
+    </label>
+
+    <!-- Select -->
     <select name="genre" 
             id="genre" 
             v-model="userSelect" 
@@ -39,5 +45,9 @@ export default {
 
 <style lang="scss" scoped>
     @import '../style/variables.scss';
+
+    label {
+        color: #17d860;
+    }
     
 </style>

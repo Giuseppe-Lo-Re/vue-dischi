@@ -1,10 +1,15 @@
 <template>
   <div class="container">
 
-    <PageSelect @selectedGenre="changeSelect" /> 
+    <!-- Select Menù-->
+    <div class="select">
+        <PageSelect @selectedGenre="changeSelect" />
+    </div>
+     
+    <!-- Album List -->
     <div class="products-list">
         <PageProductCard 
-            v-for="(album,index) in albumList" 
+            v-for="(album,index) in filteredProductList" 
             :key="index"
             :productDetails="album" />
     </div>
@@ -12,7 +17,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import PageProductCard from "./PageProductCard.vue";
 import PageSelect from "./PageSelect.vue";
 import axios from "axios";
@@ -27,7 +31,7 @@ data() {
         return {
             url:"https://flynn.boolean.careers/exercises/api/array/music",
             albumList: [],
-            selectedGenre : ''
+            selectedGenre : '',
         }
     },
     created() {
@@ -39,8 +43,8 @@ data() {
                 return this.albumList
             } else {
                 return this.albumList.filter((item) => {
-                return item.genre.includes(this.selectedGenre)
-            });
+                    return item.genre.includes(this.selectedGenre)
+                })
             }
         }
     },
@@ -65,6 +69,9 @@ data() {
 @import '../style/common';
 @import '../style/variables';
 
+.select {
+    padding: 20px 10px 10px 10px;
+}
 .products-list {
     display: flex;
     flex-wrap: wrap;
