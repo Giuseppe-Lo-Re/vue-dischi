@@ -12,6 +12,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import PageProductCard from "./PageProductCard.vue";
 import PageSelect from "./PageSelect.vue";
 import axios from "axios";
@@ -37,12 +38,10 @@ data() {
             if (this.selectedGenre === 'all') {
                 return this.albumList
             } else {
-                return this.selectedGenre
-            }
-
-            return this.albumList.filter((item) => {
+                return this.albumList.filter((item) => {
                 return item.genre.includes(this.selectedGenre)
             });
+            }
         }
     },
     methods: {
