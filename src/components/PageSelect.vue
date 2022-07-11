@@ -1,30 +1,38 @@
 <template>
-  <div>
+  <div class="select">
 
-    <select name="genres" id="genres">
-
-        <option value="" @click="$emit('selectFilter', '')">
-            Seleziona un {{ filterName }}
-        </option>
-
-        <option 
-            :value="filter" 
-            v-for="(filter, index) in filters"
-            :key="index"
-            @click="$emit('selectFilter', filter)"
-        >
-            {{ filter }}
-        </option>
+    <select name="genre" 
+            id="genre" 
+            v-model="userSelect" 
+            @change="$emit('selectedGenre', userSelect)"
+    >
+        <option value="all">
+            Tutti
+            </option>
+        <option value="Rock">
+            Rock
+            </option>
+        <option value="Pop">
+            Pop
+            </option>
+        <option value="Jazz">
+            Jazz
+            </option>
+        <option value="Metal">
+            Metal
+            </option>
     </select>
+    
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Select',
-    props: {
-        filters: Array,
-        filterName: String
+    name: 'PageSelect',
+    data() {
+        return {
+            userSelect : ''
+        }
     }
 }
 </script>
