@@ -32,13 +32,4 @@ export default {
 <style lang="scss" scoped>
     @import '../style/variables.scss';
     
-    select {          
-        width: 200px;      
-        padding: 5px;            
-        font-size: 16px;
-        margin-top: 10px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: $mainColor;
-    }
 </style>

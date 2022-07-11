@@ -1,13 +1,5 @@
 <template>
   <div class="container">
-
-    <div class="cards">
-        <div class="filters">
-            <Select @selectFilter="getSelected()"
-                :filters="getGenres()"
-                :filter-name="'genere'"/>
-        </div>
-
     <div class="products-list">
         <PageProductCard 
             v-for="(album,index) in albumList" 
@@ -18,9 +10,8 @@
 </template>
 
 <script>
-import axios from "axios";
 import PageProductCard from "./PageProductCard.vue"; 
-import Select from './PageSelect.vue';
+import axios from "axios";
 
 export default {
 name: "PageProductList",
